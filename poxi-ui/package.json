@@ -1,0 +1,53 @@
+{
+  "name": "poxi-utilities",
+  "version": "1.0.0",
+  "description": "Poxi Utilities - Video y Fotos",
+  "main": "electron/main.js",
+  "author": "Poxi",
+  "license": "MIT",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "electron": "electron .",
+    "electron:dev": "concurrently -k \"vite\" \"wait-on http://127.0.0.1:5173 && electron .\"",
+    "dist": "npm run build && electron-builder",
+    "dist:installer": "npm run build && electron-builder --win nsis",
+    "dist:all": "npm run build && electron-builder --win portable nsis"
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^4.2.1",
+    "electron": "^28.0.0",
+    "electron-builder": "^24.9.1",
+    "concurrently": "^8.2.2",
+    "wait-on": "^7.2.0",
+    "cross-env": "^7.0.3",
+    "vite": "^5.0.0"
+  },
+  "build": {
+    "appId": "com.poxi.utilities",
+    "productName": "Poxi Utilities - Video y Fotos",
+    "directories": { "output": "release" },
+    "files": ["dist/**/*", "electron/**/*", "backend/**/*"],
+    "win": {
+      "target": ["portable", "nsis"],
+      "icon": "../Poxi V4 SUPER PERFECT redondo.ico"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "installerIcon": "../Poxi V4 SUPER PERFECT redondo.ico",
+      "uninstallerIcon": "../Poxi V4 SUPER PERFECT redondo.ico",
+      "installerHeaderIcon": "../Poxi V4 SUPER PERFECT redondo.ico",
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true
+    },
+    "extraResources": [
+      { "from": "backend/", "to": "backend", "filter": ["**/*"] }
+    ]
+  }
+}
