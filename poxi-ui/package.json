@@ -31,6 +31,8 @@
   "build": {
     "appId": "com.poxi.utilities",
     "productName": "Poxi Utilities - Videos, Fotos y Audio",
+    "copyright": "Copyright © Poxi",
+    "publisherName": "Poxi",
     "directories": { "output": "release" },
     "files": ["dist/**/*", "electron/**/*", "backend/**/*"],
     "win": {

@@ -25,6 +25,7 @@ poxi-ui/release/
 # IDE
 .idea/
 .vscode/
+.cursor/
 *.swp
 *.swo
 
