@@ -1,61 +1,80 @@
-# Poxi Utilities – Video y Fotos
+<p align="center">
+  <img src="ejemplo.jpg" alt="Poxi Utilities - Interfaz" width="600">
+</p>
 
-App de conversión de archivos multimedia para Windows: vídeo, audio e imágenes. Interfaz moderna en Electron + React con modo oscuro azulado.
+<h1 align="center">🎬 Poxi Utilities – Videos, Fotos y Audio</h1>
 
-![Version](https://img.shields.io/badge/version-1.0.0-blue)
+<p align="center">
+  <strong>Conversor universal de archivos multimedia para Windows</strong>
+</p>
 
-## Funcionalidades
+<p align="center">
+  <img src="https://img.shields.io/badge/version-1.0.0-blue?style=for-the-badge" alt="Version">
+  <img src="https://img.shields.io/badge/platform-Windows-0078d6?style=for-the-badge&logo=windows" alt="Windows">
+  <img src="https://img.shields.io/badge/license-MIT-green?style=for-the-badge" alt="Licencia">
+</p>
 
-### Vídeo
-- **Convertir**: MP4, MOV, AVI, MKV, WebM, M4V ↔ extraer audio (MP3, WAV, M4A, AAC, OGG, FLAC)
-- **Comprimir**: ajuste de calidad (CRF 18–33)
+<p align="center">
+  Interfaz moderna en <strong>Electron + React</strong> con modo oscuro azulado.<br>
+  Convierte vídeo, audio e imágenes con unos clics.
+</p>
 
-### Audio
-- **Convertir**: MP3, WAV, M4A, AAC, OGG, FLAC (sample rate, bitrate, bits)
-- **Comprimir**: conversión a MP3 con bitrate configurable
+---
 
-### Imagen
-- **Convertir**: JPG, PNG, WebP, BMP, TIFF, GIF, DNG (RAW)
-- **Comprimir**: calidad configurable (Ligera 90, Media 80, Alta 70, Máxima 60)
-- **Redimensionar**: ancho, alto o escala % (con opción de mantener proporción)
+## ✨ Características principales
 
-## Características de la interfaz
+| Categoría | Funcionalidad |
+|-----------|---------------|
+| 🎥 **Vídeo** | Convertir (MP4, MOV, AVI, MKV, WebM, M4V) · Extraer audio · Comprimir (CRF 18-33) |
+| 🎵 **Audio** | Convertir (MP3, WAV, M4A, AAC, OGG, FLAC) · Sample rate, bitrate · Comprimir a MP3 |
+| 🖼️ **Imagen** | Convertir (JPG, PNG, WebP, BMP, TIFF, GIF, DNG) · Comprimir · Redimensionar |
 
-- Tema oscuro azul (`#0f1729`)
-- Arrastrar y soltar para seleccionar archivos
-- Vista previa de imagen seleccionada (miniatura 64×64)
-- Barra de progreso con “Archivo X de Y” en colas
-- Modal integrado “Conversión finalizada” con botón “Abrir carpeta”
-- Botón Cancelar para detener conversiones
-- Timeout de 15 minutos para archivos problemáticos
-- Validación de formatos (aviso si se mezclan vídeo/imagen)
-- Sin menú superior en la app final
+---
 
-## Requisitos
+## 🚀 Interfaz
 
-- **Windows 10/11**
-- **FFmpeg** (en el PATH) para vídeo y audio
-- **Python 3.10+** (solo para desarrollo/compilación)
+- 🌙 **Tema oscuro** azul elegante
+- 📂 **Arrastrar y soltar** para seleccionar archivos
+- 👁️ **Vista previa** de imágenes seleccionadas
+- 📊 **Progreso** por archivo cuando hay cola («Archivo 2 de 5»)
+- ✅ **Modal integrado** al terminar con botón «Abrir carpeta»
+- ⏹️ **Botón Cancelar** para detener conversiones
+- 🛡️ **Validación** de formatos (aviso si se mezclan tipos incompatibles)
 
-## Descargas
+---
 
-**[Descargar releases](https://github.com/PoxiiTV/Convertidor-Universal-.mp4.mp3.jpg/releases)** – Portable e Instalador (~114 MB cada uno).
+## 📥 Descargas
 
-## Uso rápido
+<p align="center">
+  <a href="https://github.com/PoxiiTV/Convertidor-Universal-.mp4.mp3.jpg/releases">
+    <img src="https://img.shields.io/badge/Descargar-Releases-238636?style=for-the-badge&logo=github" alt="Descargar">
+  </a>
+</p>
 
-1. Ejecuta `Poxi Utilities - Video y Fotos - Portable.exe` (no requiere instalación)
-2. O instala con `Poxi Utilities - Video y Fotos - Setup.exe`
-3. Selecciona archivos (arrastra o usa el botón)
-4. Elige pestaña (Vídeo/Audio/Imagen) y modo (Convertir/Comprimir/Redimensionar)
-5. Configura opciones y pulsa el botón de acción
+- 📦 **Portable** — No requiere instalación (~114 MB)
+- 🔧 **Instalador** — Setup con accesos directos (~114 MB)
 
-## Desarrollo
+> ⚠️ **Requisito:** [FFmpeg](https://ffmpeg.org/) en el PATH para vídeo y audio
+
+---
+
+## 🖥️ Uso rápido
+
+1. Ejecuta el `.exe` (Portable o tras instalar)
+2. Arrastra archivos o usa **Seleccionar archivos**
+3. Elige pestaña: **Vídeo** · **Audio** · **Imagen**
+4. Selecciona modo: **Convertir** · **Comprimir** · **Redimensionar**
+5. Configura opciones y pulsa el botón de acción ▶️
+
+---
+
+## 🛠️ Desarrollo
 
 ### Backend (Python)
 
 ```bash
 pip install -r requirements.txt
-python build_backend.py   # Genera converter_backend.exe → poxi-ui/backend/
+python build_backend.py   # → poxi-ui/backend/converter_backend.exe
 ```
 
 ### Frontend (Electron + React)
@@ -69,39 +88,28 @@ npm run electron:dev      # Modo desarrollo con recarga en caliente
 ### Build completo
 
 ```bash
-build_electron.bat        # Desde la raíz: compila backend + genera EXE
+build_electron.bat        # Desde la raíz
 ```
 
-O manualmente:
+---
 
-```bash
-python build_backend.py
-cd poxi-ui && npm run dist
-```
-
-Salida en `poxi-ui/release/`:
-- `Poxi Utilities - Video y Fotos - Portable.exe`
-- `Poxi Utilities - Video y Fotos - Setup.exe`
-
-## Estructura del proyecto
+## 📁 Estructura
 
 ```
-├── converter_core.py      # Lógica de conversión (FFmpeg, Pillow, rawpy)
-├── converter_backend.py   # Backend headless (stdin JSON → stdout JSON)
-├── build_backend.py       # Script para generar converter_backend.exe
-├── build_electron.bat     # Build completo Windows
+├── converter_core.py      # Lógica de conversión
+├── converter_backend.py   # Backend headless
+├── build_backend.py
+├── build_electron.bat
 ├── poxi-ui/
-│   ├── electron/          # Proceso principal Electron
-│   │   ├── main.js
-│   │   └── preload.js
-│   ├── src/
-│   │   ├── App.jsx        # UI React
-│   │   └── index.css
-│   ├── backend/           # converter_backend.exe (generado)
-│   └── release/           # EXE finales (generados)
+│   ├── electron/
+│   ├── src/               # React UI
+│   ├── backend/
+│   └── release/           # EXE finales
 └── requirements.txt
 ```
 
-## Licencia
+---
 
-MIT
+## 📄 Licencia
+
+MIT © Poxi

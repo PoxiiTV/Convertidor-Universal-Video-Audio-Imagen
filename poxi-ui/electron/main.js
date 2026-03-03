@@ -29,7 +29,7 @@ function createWindow() {
     height: 820,
     minWidth: 520,
     minHeight: 600,
-    title: 'Poxi Utilities - Video y Fotos',
+    title: 'Poxi Utilities - Videos, Fotos y Audio',
     backgroundColor: '#0f1729',
     icon: fs.existsSync(iconPath) ? iconPath : undefined,
     webPreferences: {

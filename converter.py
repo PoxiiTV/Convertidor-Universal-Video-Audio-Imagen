@@ -34,7 +34,7 @@ ctk.set_default_color_theme("blue")
 class ConvertidorApp(ctk.CTk):
     def __init__(self):
         super().__init__()
-        self.title("Poxi Utilities - Video y Fotos")
+        self.title("Poxi Utilities - Videos, Fotos y Audio")
         self.geometry("580x560")
         self.minsize(520, 500)
 

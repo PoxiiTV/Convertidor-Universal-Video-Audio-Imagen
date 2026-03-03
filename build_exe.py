@@ -18,7 +18,7 @@ def main():
         sys.executable, "-m", "PyInstaller",
         "--onefile",
         "--windowed",
-        "--name", "Poxi Utilities - Video y Fotos",
+        "--name", "Poxi Utilities - Videos, Fotos y Audio",
         "--clean",
         "--noconfirm",
         "--distpath", str(root / "dist"),
@@ -36,7 +36,7 @@ def main():
         cmd.extend(["--add-data", str(icon_path) + add_data_sep + "."])
     cmd.append(str(root / "converter.py"))
     subprocess.run(cmd, check=True)
-    print("\nListo. EXE generado en: dist/Poxi Utilities - Video y Fotos.exe")
+    print("\nListo. EXE generado en: dist/Poxi Utilities - Videos, Fotos y Audio.exe")
 
 if __name__ == "__main__":
     main()

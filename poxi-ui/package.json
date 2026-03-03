@@ -1,7 +1,7 @@
 {
   "name": "poxi-utilities",
   "version": "1.0.0",
-  "description": "Poxi Utilities - Video y Fotos",
+  "description": "Poxi Utilities - Videos, Fotos y Audio",
   "main": "electron/main.js",
   "author": "Poxi",
   "license": "MIT",
@@ -30,7 +30,7 @@
   },
   "build": {
     "appId": "com.poxi.utilities",
-    "productName": "Poxi Utilities - Video y Fotos",
+    "productName": "Poxi Utilities - Videos, Fotos y Audio",
     "directories": { "output": "release" },
     "files": ["dist/**/*", "electron/**/*", "backend/**/*"],
     "win": {

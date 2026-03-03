@@ -1,4 +1,4 @@
-# Poxi Utilities - Video y Fotos (Electron + React)
+# Poxi Utilities - Videos, Fotos y Audio (Electron + React)
 
 Interfaz moderna en Electron + React. La conversión real la hace el backend en Python (mismo código que el convertidor clásico).
 

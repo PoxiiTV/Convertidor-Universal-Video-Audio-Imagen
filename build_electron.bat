@@ -17,10 +17,10 @@ call npm run dist
 cd ..
 echo.
 echo Generados en poxi-ui\release\
-if exist "poxi-ui\release\Poxi Utilities - Video y Fotos 1.0.0.exe" (
-    echo  - Portable: Poxi Utilities - Video y Fotos 1.0.0.exe
+if exist "poxi-ui\release\Poxi Utilities - Videos, Fotos y Audio - Portable.exe" (
+    echo  - Portable: Poxi Utilities - Videos, Fotos y Audio - Portable.exe
 )
-if exist "poxi-ui\release\Poxi Utilities - Video y Fotos Setup 1.0.0.exe" (
-    echo  - Instalador: Poxi Utilities - Video y Fotos Setup 1.0.0.exe
+if exist "poxi-ui\release\Poxi Utilities - Videos, Fotos y Audio - Setup.exe" (
+    echo  - Instalador: Poxi Utilities - Videos, Fotos y Audio - Setup.exe
 )
 pause

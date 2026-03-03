@@ -42,8 +42,8 @@ Los .exe (~114 MB cada uno) no van en el repo por el límite de 100 MB de GitHub
 
    ```
    ## Descargas
-   - **Portable**: Poxi Utilities - Video y Fotos - Portable.exe (no requiere instalación)
-   - **Instalador**: Poxi Utilities - Video y Fotos - Setup.exe
+   - **Portable**: Poxi Utilities - Videos, Fotos y Audio - Portable.exe (no requiere instalación)
+   - **Instalador**: Poxi Utilities - Videos, Fotos y Audio - Setup.exe
    ```
 
 5. Arrastra los dos archivos desde `poxi-ui/release/` a la zona de adjuntos
