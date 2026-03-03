@@ -95,10 +95,16 @@ function ensureBackend() {
       windowsHide: true,
     });
   } else {
+    const env = { ...process.env };
+    const ffmpegPath = path.join(process.resourcesPath, 'ffmpeg', 'ffmpeg.exe');
+    if (fs.existsSync(ffmpegPath)) {
+      env.FFMPEG_PATH = ffmpegPath;
+    }
     backendProcess = spawn(backend.path, [], {
       cwd: path.dirname(backend.path),
       stdio: ['pipe', 'pipe', 'pipe'],
       windowsHide: true,
+      env,
     });
   }
   backendProcess.on('error', () => {});

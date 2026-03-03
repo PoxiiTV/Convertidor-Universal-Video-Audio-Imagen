@@ -1,6 +1,6 @@
 {
   "name": "poxi-utilities",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Poxi Utilities - Videos, Fotos y Audio",
   "main": "electron/main.js",
   "author": "Poxi",
@@ -47,7 +47,8 @@
       "createStartMenuShortcut": true
     },
     "extraResources": [
-      { "from": "backend/", "to": "backend", "filter": ["**/*"] }
+      { "from": "backend/", "to": "backend", "filter": ["**/*"] },
+      { "from": "ffmpeg/", "to": "ffmpeg", "filter": ["**/ffmpeg.exe"] }
     ]
   }
 }

@@ -71,6 +71,19 @@ def get_target_formats(source_ext: str) -> list[str]:
 
 
 def find_ffmpeg() -> str | None:
+    import os
+    bundled = os.environ.get("FFMPEG_PATH")
+    if bundled and os.path.isfile(bundled):
+        try:
+            subprocess.run(
+                [bundled, "-version"],
+                capture_output=True,
+                check=True,
+                creationflags=SUBPROCESS_FLAGS,
+            )
+            return bundled
+        except (subprocess.CalledProcessError, FileNotFoundError):
+            pass
     for cmd in ("ffmpeg", "ffmpeg.exe"):
         try:
             subprocess.run(

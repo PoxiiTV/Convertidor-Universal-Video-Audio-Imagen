@@ -9,7 +9,7 @@
 </p>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/version-1.0.0-blue?style=for-the-badge" alt="Version">
+  <img src="https://img.shields.io/badge/version-1.1.0-blue?style=for-the-badge" alt="Version">
   <img src="https://img.shields.io/badge/platform-Windows-0078d6?style=for-the-badge&logo=windows" alt="Windows">
   <img src="https://img.shields.io/badge/license-MIT-green?style=for-the-badge" alt="Licencia">
 </p>
@@ -17,6 +17,10 @@
 <p align="center">
   Interfaz moderna en <strong>Electron + React</strong> con modo oscuro azulado.<br>
   Convierte vídeo, audio e imágenes con unos clics.
+</p>
+
+<p align="center">
+  <em>v1.1.0</em> — FFmpeg incluido; no necesitas instalarlo.
 </p>
 
 ---
@@ -51,10 +55,10 @@
   </a>
 </p>
 
-- 📦 **Portable** — No requiere instalación (~114 MB)
-- 🔧 **Instalador** — Setup con accesos directos (~114 MB)
+- 📦 **Portable** — No requiere instalación (~220 MB)
+- 🔧 **Instalador** — Setup con accesos directos (~220 MB)
 
-> ⚠️ **Requisito:** [FFmpeg](https://ffmpeg.org/) en el PATH para vídeo y audio
+> ✅ **FFmpeg incluido** — Todo listo; no instales nada más
 
 ---
 
@@ -88,8 +92,10 @@ npm run electron:dev      # Modo desarrollo con recarga en caliente
 ### Build completo
 
 ```bash
-build_electron.bat        # Desde la raíz
+build_electron.bat        # Desde la raíz (descarga FFmpeg + compila)
 ```
+
+El script descarga FFmpeg automáticamente si no existe en `poxi-ui/ffmpeg/`.
 
 ---
 
@@ -99,11 +105,13 @@ build_electron.bat        # Desde la raíz
 ├── converter_core.py      # Lógica de conversión
 ├── converter_backend.py   # Backend headless
 ├── build_backend.py
+├── download_ffmpeg.py     # Descarga FFmpeg para incluir en la app
 ├── build_electron.bat
 ├── poxi-ui/
 │   ├── electron/
 │   ├── src/               # React UI
-│   ├── backend/
+│   ├── backend/           # converter_backend.exe
+│   ├── ffmpeg/            # ffmpeg.exe (descargado)
 │   └── release/           # EXE finales
 └── requirements.txt
 ```
